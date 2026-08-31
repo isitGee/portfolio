@@ -1,0 +1,172 @@
+[
+  {
+    "id": "programming",
+    "label": "Programming",
+    "icon": "ic-code",
+    "items": [
+      {
+        "name": "Java",
+        "icon": "ic-code",
+        "desc": "Core language for my OOP coursework from inheritance to building small console applications."
+      },
+      {
+        "name": "Python",
+        "icon": "ic-code",
+        "desc": "My go to for scripting, quick problem solving, and algorithm practice."
+      },
+      {
+        "name": "JavaScript",
+        "icon": "ic-code",
+        "desc": "Used for interactivity on the web and, increasingly, for full front end builds."
+      },
+      {
+        "name": "HTML",
+        "icon": "ic-code",
+        "desc": "Semantic structure for every web project I build."
+      },
+      {
+        "name": "CSS",
+        "icon": "ic-code",
+        "desc": "Styling, layout, and the kind of detail work that makes an interface feel finished."
+      },
+      {
+        "name": "SQL",
+        "icon": "ic-code",
+        "desc": "Querying and designing relational databases for coursework and personal projects."
+      }
+    ]
+  },
+  {
+    "id": "software-dev",
+    "label": "Software Development",
+    "icon": "ic-layers",
+    "items": [
+      {
+        "name": "Object-Oriented Programming",
+        "icon": "ic-layers",
+        "desc": "Designing with classes, inheritance, and encapsulation rather than just making code run."
+      },
+      {
+        "name": "Data Structures & Algorithms",
+        "icon": "ic-layers",
+        "desc": "Comfortable with sorting, recursion, and analyzing complexity with Big-O."
+      },
+      {
+        "name": "Database Systems",
+        "icon": "ic-layers",
+        "desc": "Schema design, normalization, and writing queries that actually scale."
+      },
+      {
+        "name": "Web Development",
+        "icon": "ic-layers",
+        "desc": "Building responsive, interactive interfaces from scratch."
+      },
+      {
+        "name": "API Development",
+        "icon": "ic-layers",
+        "desc": "Learning to design and consume clean, predictable APIs."
+      }
+    ]
+  },
+  {
+    "id": "networking",
+    "label": "Networking",
+    "icon": "ic-network",
+    "items": [
+      {
+        "name": "Computer Networks",
+        "icon": "ic-network",
+        "desc": "Understanding how data actually moves from the physical layer up."
+      },
+      {
+        "name": "IP Addressing",
+        "icon": "ic-network",
+        "desc": "Subnetting, addressing schemes, and planning small networks."
+      },
+      {
+        "name": "Routing",
+        "icon": "ic-network",
+        "desc": "Static and dynamic routing concepts and configuration basics."
+      },
+      {
+        "name": "Cisco Packet Tracer",
+        "icon": "ic-network",
+        "desc": "Simulating and troubleshooting network topologies before touching real hardware."
+      },
+      {
+        "name": "Network Troubleshooting",
+        "icon": "ic-network",
+        "desc": "Methodically isolating faults rather than guessing."
+      }
+    ]
+  },
+  {
+    "id": "design",
+    "label": "Design",
+    "icon": "ic-pen",
+    "items": [
+      {
+        "name": "UI/UX Design",
+        "icon": "ic-pen",
+        "desc": "Thinking about flow and usability before pixels form should follow function."
+      },
+      {
+        "name": "Figma",
+        "icon": "ic-pen",
+        "desc": "Wireframing and prototyping interfaces before I build them."
+      },
+      {
+        "name": "Canva",
+        "icon": "ic-pen",
+        "desc": "Fast, clean visual assets for content and branding work."
+      },
+      {
+        "name": "Photoshop",
+        "icon": "ic-pen",
+        "desc": "Image editing and asset preparation for web and social."
+      },
+      {
+        "name": "Graphic Design",
+        "icon": "ic-pen",
+        "desc": "Applying visual hierarchy and brand consistency across projects."
+      }
+    ]
+  },
+  {
+    "id": "tools",
+    "label": "Tools",
+    "icon": "ic-wrench",
+    "items": [
+      {
+        "name": "Git",
+        "icon": "ic-wrench",
+        "desc": "Version control for every project branches, commits, and history that make sense."
+      },
+      {
+        "name": "GitHub",
+        "icon": "ic-wrench",
+        "desc": "Hosting repos, managing issues, and collaborating on code."
+      },
+      {
+        "name": "VS Code",
+        "icon": "ic-wrench",
+        "desc": "My daily editor for web projects and scripting."
+      },
+      {
+        "name": "IntelliJ IDEA",
+        "icon": "ic-wrench",
+        "desc": "My IDE of choice for Java coursework and projects."
+      },
+      {
+        "name": "Postman",
+        "icon": "ic-wrench",
+        "desc": "Testing and debugging API endpoints."
+      },
+      {
+        "name": "Linux",
+        "icon": "ic-wrench",
+        "desc": "Comfortable working from the command line for dev and networking tasks."
+      }
+    ]
+  }
+]

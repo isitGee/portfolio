@@ -1,0 +1,62 @@
+[
+  {
+    "id": "Project 01",
+    "title": "GEE PLAYS — Gaming Hub",
+    "description": "A gaming hub that allows users to explore, play, and share their favorite games. It features a user-friendly interface, game recommendations, and social sharing capabilities.",
+    "category": "Web",
+    "year": "2026",
+    "status": "In Progress",
+    "featured": true,
+    "image": "assets/images/projects/GeePlays.png",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "github": "https://github.com/isitGee/GeePlays",
+    "demo": "https://isitgee.github.io/GeePlays/",
+    "details": {
+      "problem": "The website helps gamers find and play games easily, providing a platform for game discovery and social interaction.",
+      "solution": "Directly access a curated list of games, read reviews, and share experiences with other gamers.",
+      "features": ["Search functionality", "Game recommendations", "Social sharing"],
+      "learned": "Hosting and deploying a web application, and implementing responsive design for various devices.",
+      "challenges": "Managing game data and ensuring the website remains responsive across different screen sizes. solving this by using media queries and testing on multiple devices."
+    }
+  },
+  {
+    "id": "Project 02",
+    "title": "in progress",
+    "description": "in progress",
+    "category": "Academic",
+    "year": "2026",
+    "status": "Planned",
+    "featured": false,
+    "image": "",
+    "tech": ["[TECH]"],
+    "github": "[GITHUB REPO URL]",
+    "demo": "[LIVE DEMO URL]",
+    "details": {
+      "problem": "[PROBLEM]",
+      "solution": "[SOLUTION]",
+      "features": ["[FEATURE 1]", "[FEATURE 2]", "[FEATURE 3]"],
+      "learned": "[WHAT I LEARNED]",
+      "challenges": "[CHALLENGES FACED AND HOW I SOLVED THEM]"
+    }
+  },
+  {
+    "id": "Project 03",
+    "title": "in progress",
+    "description": "in progress",
+    "category": "Networking",
+    "year": "2026",
+    "status": "Planned",
+    "featured": false,
+    "image": "",
+    "tech": ["[TECH]"],
+    "github": "[GITHUB REPO URL]",
+    "demo": "[LIVE DEMO URL]",
+    "details": {
+      "problem": "[PROBLEM]",
+      "solution": "[SOLUTION]",
+      "features": ["[FEATURE 1]", "[FEATURE 2]", "[FEATURE 3]"],
+      "learned": "[WHAT I LEARNED]",
+      "challenges": "[CHALLENGES FACED AND HOW I SOLVED THEM]"
+    }
+  }
+]

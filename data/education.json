@@ -1,0 +1,54 @@
+[
+  {
+    "institution": "Nyerere Secondary School",
+    "qualification": "Oldinary Level",
+    "start": "2018",
+    "end": "2021",
+    "location": "Iringa, Tanzania",
+    "description": "Ordinary level studies covering a broad range of subjects, providing a solid foundation for further education and personal development.",
+    "coursework": [
+      "Physics",
+      "Mathematics",
+      "Chemistry",
+      "Biology",
+      "Geography",
+      "History",
+      "Civics",
+      "English Language",
+      "Kiswahili Language",
+      "literature in English"
+    ]
+  }, 
+  {
+    "institution": "Ilboru Secondary School",
+    "qualification": "PCM - Advanced Level",
+    "start": "2022",
+    "end": "2024",
+    "location": "Arusha, Tanzania",
+    "description": "Advanced level studies in Physics, Chemistry, and Mathematics, with a focus on preparing for higher education in science and technology fields.",
+    "coursework": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ]
+  },
+  {
+    "institution": "University of Dar es Salaam (CoICT)",
+    "qualification": "BSc in Computer Science",
+    "field": "Computer Science",
+    "start": "2024",
+    "end": "Present",
+    "location": "Dar es Salaam, Tanzania",
+    "description": "Undergraduate studies covering software engineering, systems analysis and design, computer organization and architecture, algorithms, and formal logic with a growing focus on practical, project-based learning.",
+    "coursework": [
+      "Object-Oriented Programming (Java)",
+      "Computer Organization & Architecture",
+      "Object-Oriented Systems Analysis & Design",
+      "Algorithms & Computability",
+      "Mathematical Logic & Formal Semantics",
+      "Discrete Mathematics",
+      "Database systems",
+      "Computer networks"
+    ]
+  }
+]

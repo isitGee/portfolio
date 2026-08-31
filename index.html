@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>George Portifolio website</title>
+    <meta
+      name="description"
+      content="George — Computer Science student, developer, and tech explorer. Portfolio of projects, skills, and journey into software engineering and networking."
+    />
+
+    <!-- ============================================================
+     FONTS
+     Space Grotesk  -> display / headings (technical, geometric)
+     Inter          -> body copy
+     JetBrains Mono -> labels, tags, meta text (developer feel)
+============================================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/images/Gee.png" />
+    <script type="module" src="script.js" defer></script>
+     <!-- Zapier Chatbot -->
+    <script async type="module"
+        src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js">
+    </script>
+  </head>
+  <body>
+    <a href="#home" class="skip-link">Skip to content</a>
+
+    <!-- Scroll progress11 -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Ambient background -->
+    <div class="bg-fx" aria-hidden="true">
+      <canvas id="network-canvas"></canvas>
+      <div class="grid-overlay"></div>
+      <div class="blob blob--1"></div>
+      <div class="blob blob--2"></div>
+      <div class="blob blob--3"></div>
+    </div>
+
+    <!-- Icon sprite (functional UI icons — hand-drawn, not brand logos) -->
+    <svg style="display: none" aria-hidden="true">
+      <symbol
+        id="ic-menu"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+      >
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </symbol>
+      <symbol
+        id="ic-close"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+      >
+        <line x1="5" y1="5" x2="19" y2="19" />
+        <line x1="19" y1="5" x2="5" y2="19" />
+      </symbol>
+      <symbol
+        id="ic-sun"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+      >
+        <circle cx="12" cy="12" r="4.2" />
+        <path
+          d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"
+        />
+      </symbol>
+      <symbol
+        id="ic-moon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+      >
+        <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" />
+      </symbol>
+      <symbol
+        id="ic-mail"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect x="3" y="5" width="18" height="14" rx="2.5" />
+        <path d="M3.5 6.5 12 13l8.5-6.5" />
+      </symbol>
+      <symbol
+        id="ic-phone"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M6 3h3l2 5-2.4 1.6a11 11 0 0 0 5.8 5.8L16 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"
+        />
+      </symbol>
+      <symbol
+        id="ic-pin"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 21s7-6.4 7-11.6A7 7 0 0 0 5 9.4C5 14.6 12 21 12 21Z" />
+        <circle cx="12" cy="9.4" r="2.4" />
+      </symbol>
+      <symbol
+        id="ic-download"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 3v13m0 0-4.5-4.5M12 16l4.5-4.5" />
+        <path d="M4 19.5h16" />
+      </symbol>
+      <symbol
+        id="ic-arrow"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol
+        id="ic-external"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M9 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3M14 4h6v6M20 4 10 14"
+        />
+      </symbol>
+      <symbol
+        id="ic-code"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m8 6-5 6 5 6M16 6l5 6-5 6M13.5 4 10 20" />
+      </symbol>
+      <symbol
+        id="ic-layers"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 3 2 8l10 5 10-5-10-5Z" />
+        <path d="M2 13l10 5 10-5M2 18l10 5 10-5" opacity=".5" />
+      </symbol>
+      <symbol
+        id="ic-network"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="5" cy="6" r="2.4" />
+        <circle cx="19" cy="6" r="2.4" />
+        <circle cx="12" cy="18" r="2.4" />
+        <path d="M7.1 7.1 10 16M16.9 7.1 14 16M7.3 6h9.4" />
+      </symbol>
+      <symbol
+        id="ic-pen"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 20l1-4.5L15.5 5 19 8.5 8.5 19 4 20Z" />
+        <path d="M13.2 6.8 17.2 10.8" />
+      </symbol>
+      <symbol
+        id="ic-wrench"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M14.7 6.3a4 4 0 0 1-5.1 5.1L4 17l3 3 5.6-5.6a4 4 0 0 1 5.1-5.1L14.7 12l-2.7-2.7 2.7-3Z"
+        />
+      </symbol>
+      <symbol
+        id="ic-star"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        stroke="none"
+      >
+        <path
+          d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.3l-5.9 3.2 1.3-6.5-4.9-4.6 6.6-.8Z"
+        />
+      </symbol>
+      <symbol
+        id="ic-calendar"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect x="3.5" y="5" width="17" height="16" rx="2.2" />
+        <path d="M3.5 9.5h17M8 3v4M16 3v4" />
+      </symbol>
+      <symbol
+        id="ic-check"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 12.5l5 5 11-11" />
+      </symbol>
+      <symbol
+        id="ic-folder"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M3 6.5a1.5 1.5 0 0 1 1.5-1.5H9l2 2.3h8.5A1.5 1.5 0 0 1 21 8.8V17a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17V6.5Z"
+        />
+      </symbol>
+      <symbol
+        id="ic-briefcase"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect x="3" y="8" width="18" height="12" rx="2" />
+        <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" />
+      </symbol>
+      <symbol
+        id="ic-cap"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M2 9 12 4l10 5-10 5-10-5Z" />
+        <path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5" />
+      </symbol>
+      <symbol
+        id="ic-award"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="9" r="5.5" />
+        <path d="M8.3 13.5 7 21l5-2.4L17 21l-1.3-7.5" />
+      </symbol>
+      <symbol
+        id="ic-trophy"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M7 4h10v5a5 5 0 0 1-10 0V4Z" />
+        <path
+          d="M7 5H4a3 3 0 0 0 3 5M17 5h3a3 3 0 0 1-3 5M9.5 15.5h5L15 20H9l.5-4.5Z"
+        />
+      </symbol>
+    </svg>
+
+    <!-- ============================================================
+     NAVIGATION
+============================================================ -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <a href="#home" class="brand">
+          <img
+            src="assets/images/Gee.png"
+            alt="George brand mark"
+            class="brand-mark"
+          />
+          <span id="brandName">Mwanga G. F</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            class="icon-btn"
+            id="themeToggle"
+            aria-label="Toggle light and dark theme"
+          >
+            <svg class="icon-sun" aria-hidden="true">
+              <use href="#ic-sun" />
+            </svg>
+            <svg class="icon-moon" aria-hidden="true">
+              <use href="#ic-moon" />
+            </svg>
+          </button>
+          <a
+            href="#contact"
+            class="btn btn-glass btn-sm"
+            style="display: none"
+            id="navContactBtn"
+            >Contact</a
+          >
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+    >
+      <button type="button" class="mobile-nav-link" data-target="#home">Home</button>
+      <button type="button" class="mobile-nav-link" data-target="#about">About</button>
+      <button type="button" class="mobile-nav-link" data-target="#skills">Skills</button>
+      <button type="button" class="mobile-nav-link" data-target="#projects">Projects</button>
+      <button type="button" class="mobile-nav-link" data-target="#education">Education</button>
+      <button type="button" class="mobile-nav-link" data-target="#certificates">Certificates</button>
+      <button type="button" class="mobile-nav-link" data-target="#experience">Experience</button>
+      <button type="button" class="mobile-nav-link" data-target="#contact">Contact</button>
+      <button type="button" class="btn btn-primary mobile-nav-link" data-target="#contact">Let's Connect</button>
+    </div>
+
+    <main id="mainContent">
+      <!-- ============================================================
+       HERO
+  ============================================================ -->
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy" data-reveal>
+            <span class="status-pill glass"
+              ><span class="status-dot"></span> Open to internships &amp;
+              collaborations</span
+            >
+            <h1 class="hero-title">
+              <span class="accent">Mwanga</span> G .F
+              <span class="line2" id="heroFullName"
+                >Computer Science Student &amp; Future Tech Professional</span
+              >
+            </h1>
+            <p class="hero-desc" id="heroDesc">
+              I'm studying Computer Science at the University of Dar es Salaam,
+              sharpening my skills in software development, networking, and
+              design. I build projects to learn by doing, experiment with new
+              technologies, and I'm steadily working toward becoming a
+              well-rounded tech professional — one commit at a time.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                View My Projects
+                <svg aria-hidden="true"><use href="#ic-arrow" /></svg>
+              </a>
+              <a href="#contact" class="btn btn-glass">Let's Connect</a>
+              <a
+                href="/assets/George_Mwanga_CV.pdf"
+                download="George_Mwanga_CV.pdf"
+                class="btn btn-ghost"
+                id="downloadCvBtn"
+              >
+                Download CV
+                <svg aria-hidden="true"><use href="#ic-download" /></svg>
+              </a>
+            </div>
+            <div class="hero-meta">
+              <div><strong id="statProjects">0</strong>Projects tracked</div>
+              <div><strong id="statSkills">0</strong>Skills logged</div>
+              <div><strong>CoICT</strong>UDSM</div>
+            </div>
+          </div>
+
+          <div class="hero-visual" data-reveal data-reveal-delay="2">
+            <div class="orbit-ring orbit-ring--1" aria-hidden="true"></div>
+            <div class="orbit-ring orbit-ring--2" aria-hidden="true"></div>
+            <div class="avatar-card glass glass-strong tilt" id="avatarCard">
+              <div class="avatar-glow" aria-hidden="true"></div>
+              <div class="avatar-inner">
+                <img
+                  src="assets/images/Gee.png"
+                  alt="Photo of George"
+                  id="avatarImg"
+                  class="avatar-img"
+                />
+              </div>
+            </div>
+            <div id="techBadges"></div>
+          </div>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span>Scroll</span><span class="scroll-cue-line"></span>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">About</span>
+            <h2 class="section-title">Who I am, in more than one line</h2>
+            <p class="section-sub">
+              A quick look at where I'm coming from, what I'm building toward,
+              and how I like to work.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-card glass" data-reveal>
+              <p>
+                I'm a Computer Science student at the University of Dar es
+                Salaam (CoICT), and most of my week is spent somewhere between
+                lecture notes, an IDE, and a half-finished side project. I like
+                understanding how things work under the hood whether that's an
+                algorithm, a network, or a user interface and then building
+                something with that understanding.
+              </p>
+              <p>
+                My interests sit across a few areas: software development (I
+                spend a lot of time in Java and web technologies), computer
+                networking (I think in terms of routers, packets, and topologies
+                almost as much as code), and UI/UX I care about how something
+                looks and feels to use, not just whether it works.
+              </p>
+              <p>
+                Outside of coursework, I'm usually learning something new a
+                tool, a language, a concept I only half understood in class. I
+                also run a gaming and content brand on the side, which keeps me
+                close to design, audience-building, and shipping things
+                publicly.
+              </p>
+              <p>
+                Longer term, my goal is to grow from student → developer →
+                professional: to keep building real projects, contribute to
+                teams, and eventually work on technology that people actually
+                use. I try to approach problems methodically understand the
+                problem first, break it down, then build and iterate.
+              </p>
+              <div class="about-tags">
+                <span>#StudentDeveloper</span><span>#AlwaysLearning</span
+                ><span>#BuildInPublic</span><span>#Networking</span
+                ><span>#UIUX</span>
+              </div>
+            </div>
+
+            <div
+              class="facts-card glass"
+              data-reveal
+              data-reveal-delay="2"
+              id="quickFacts"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       SKILLS
+  ============================================================ -->
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Skills</span>
+            <h2 class="section-title">What I work with</h2>
+            <p class="section-sub">
+              Grouped by area: hover a card for a short note on how I use it.
+            </p>
+          </div>
+          <div class="skills-tabs" id="skillsTabs" data-reveal></div>
+          <div
+            class="skills-panels"
+            id="skillsPanels"
+            data-reveal
+            data-reveal-delay="2"
+          ></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Projects</span>
+            <h2 class="section-title">
+              Things I've built &amp; things I'm building
+            </h2>
+            <p class="section-sub">
+              Click any card for the full write-up.
+            </p>
+          </div>
+
+          <div id="featuredStrip" class="featured-strip" data-reveal></div>
+
+          <div class="filters" id="projectFilters" data-reveal></div>
+          <div
+            class="projects-grid"
+            id="projectsGrid"
+            data-reveal
+            data-reveal-delay="2"
+          ></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       EDUCATION
+  ============================================================ -->
+      <section class="section" id="education">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Education</span>
+            <h2 class="section-title">Academic timeline</h2>
+            <p class="section-sub">
+              My formal studies so far, more entries will be added as I
+              progress.
+            </p>
+          </div>
+          <div class="timeline" id="educationTimeline" data-reveal></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       CERTIFICATES
+  ============================================================ -->
+      <section class="section" id="certificates">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Certificates</span>
+            <h2 class="section-title">Courses &amp; certifications</h2>
+            <p class="section-sub">
+              Click a certificate to view details and verification info.
+            </p>
+          </div>
+          <div class="certs-grid" id="certsGrid" data-reveal></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       EXPERIENCE
+  ============================================================ -->
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Experience</span>
+            <h2 class="section-title">Training &amp; experience</h2>
+            <p class="section-sub">
+              Internships, industrial training, freelance work, and hands-on
+              experience as they happen.
+            </p>
+          </div>
+          <div class="timeline" id="experienceTimeline" data-reveal></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       ACHIEVEMENTS
+  ============================================================ -->
+      <section class="section" id="achievements">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Achievements</span>
+            <h2 class="section-title">Milestones along the way</h2>
+            <p class="section-sub">
+              Academic wins, competitions, and personal milestones worth
+              marking.
+            </p>
+          </div>
+          <div class="achieve-grid" id="achieveGrid" data-reveal></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       GITHUB ACTIVITY
+  ============================================================ -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="gh-panel glass" data-reveal>
+            <div class="gh-panel-header">
+              <div class="gh-panel-text">
+                <h3>Live GitHub activity</h3>
+                <p>
+                  Recent public repositories, language highlights, and project
+                  updates from my GitHub profile are linked below.
+                </p>
+              </div>
+              <a
+                href="#"
+                class="btn btn-glass"
+                id="ghProfileLink"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg aria-hidden="true"><use href="#ic-external" /></svg> View
+                GitHub Profile
+              </a>
+            </div>
+            <div class="gh-grid" id="ghRepos"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Contact</span>
+            <h2 class="section-title">Let's build something</h2>
+            <p class="section-sub">
+              Have a project, an opportunity, advice or just want to talk tech?  feel free to reach
+              out below.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info glass" data-reveal id="contactInfo"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+     FOOTER
+============================================================ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#home" class="brand">
+              <img
+                src="assets/images/Gee.png"
+                alt="George brand mark"
+                class="brand-mark"
+              />
+              GFM
+            </a>
+            <p id="footerTagline">
+              Computer Science Student • Developer • Tech Enthusiast
+            </p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Navigate</h4>
+              <a href="#about">About</a>
+              <a href="#projects">Projects</a>
+              <a href="#education">Education</a>
+              <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+              <h4>Connect</h4>
+              <div class="social-row" id="footerSocial"></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="footerYear"></span> Mwanga George. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================================
+     MODALS
+============================================================ -->
+    <div
+      class="modal-overlay"
+      id="projectModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="pmTitle"
+    >
+      <div class="modal-box glass glass-strong" id="pmBox"></div>
+    </div>
+
+    <div
+      class="modal-overlay"
+      id="certModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cmTitle"
+    >
+      <div class="modal-box glass glass-strong" id="cmBox"></div>
+    </div>
+    <!-- Zapier chatbot will be inserted just after the Contact section -->
+    <script>
+      (function () {
+        const chatbotId = 'cmsz5y3xi0035rvtzhwpkrms9';
+
+        // guard: don't insert twice
+        if (document.getElementById('zapierChatWrapper')) return;
+
+        const wrapper = document.createElement('div');
+        wrapper.id = 'zapierChatWrapper';
+        wrapper.className = 'chatbot-wrapper';
+
+        const embed = document.createElement('zapier-interfaces-chatbot-embed');
+        embed.setAttribute('is-popup', 'false');
+        embed.setAttribute('chatbot-id', chatbotId);
+        embed.style.width = '400px';
+        embed.style.height = '600px';
+
+        wrapper.appendChild(embed);
+
+        const contactGrid = document.querySelector('.contact-grid');
+        // Prefer inserting into the contact grid so it sits to the right on desktop
+        if (contactGrid) {
+          // insert after the contact-info element if present
+          const info = document.getElementById('contactInfo');
+          if (info && info.parentNode === contactGrid) {
+            info.insertAdjacentElement('afterend', wrapper);
+          } else {
+            contactGrid.appendChild(wrapper);
+          }
+        } else {
+          // fallback: append after the contact section
+          const contactSection = document.getElementById('contact');
+          if (contactSection && contactSection.parentNode) {
+            contactSection.parentNode.insertBefore(wrapper, contactSection.nextSibling);
+          } else {
+            document.body.appendChild(wrapper);
+          }
+        }
+
+        // keep the chatbot look in sync with the site's theme attribute
+        function applyTheme() {
+          const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+          wrapper.dataset.theme = theme;
+        }
+
+        applyTheme();
+        const obs = new MutationObserver(applyTheme);
+        obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+        // responsive sizing
+        function updateSize() {
+          if (window.innerWidth < 520) {
+            embed.style.width = '100%';
+            embed.style.height = '420px';
+          } else {
+            embed.style.width = '400px';
+            embed.style.height = '600px';
+          }
+        }
+
+        updateSize();
+        window.addEventListener('resize', updateSize);
+        // show the chatbot only after the page fully loads to avoid layout issues
+        window.addEventListener('load', function () {
+          // small delay so any initial layout settles
+          setTimeout(function () {
+            wrapper.classList.add('chatbot-visible');
+          }, 250);
+        });
+      })();
+    </script>
+  </body>
+</html>

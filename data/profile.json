@@ -1,0 +1,100 @@
+{
+  "config": {
+    "name": "George",
+    "fullName": "GEORGE F. MWANGA",
+    "tagline": "Computer Science Student • Developer • UI/UX Enthusiast • Tech Explorer",
+    "heroDescription": "I'm studying Computer Science at the University of Dar es Salaam, sharpening my skills in software development, networking, and design. I build projects to learn by doing, experiment with new technologies, and I'm steadily working toward becoming a well-rounded tech professional, one commit at a time.",
+    "email": "georgemwanga116@gmail.com",
+    "phone": "+255762358050",
+    "location": "Dar es Salaam, Tanzania",
+    "cvPath": "/assets/George_Mwanga_CV.pdf",
+    "githubUsername": "isitGee",
+    "social": {
+      "github": {
+        "label": "GitHub",
+        "handle": "GH",
+        "url": "https://github.com/isitGee"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "handle": "in",
+        "url": "https://www.linkedin.com/in/george-mwanga-2b522842b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+      },
+      "instagram": {
+        "label": "Instagram",
+        "handle": "IG",
+        "url": "https://www.instagram.com/isitgee_?igsh=MW1vczdnajlsZGdmcQ==&igsi=MW1vczdnajlsZGdmcQ==   "
+      },
+      "tiktok": {
+        "label": "TikTok",
+        "handle": "TT",
+        "url": "https://www.tiktok.com/@isitgee_"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "handle": "WA",
+        "url": "https://wa.me/255762358050"
+      }
+    }
+  },
+  "techBadges": [
+    {
+      "label": "Java",
+      "color": "#f0b429"
+    },
+    {
+      "label": "Python",
+      "color": "#22d3ee"
+    },
+    {
+      "label": "JavaScript",
+      "color": "#f0b429"
+    },
+    {
+      "label": "HTML",
+      "color": "#f87171"
+    },
+    {
+      "label": "CSS",
+      "color": "#7c6cf0"
+    },
+    {
+      "label": "SQL",
+      "color": "#34d399"
+    },
+    {
+      "label": "Git",
+      "color": "#f87171"
+    },
+    {
+      "label": "GitHub",
+      "color": "#a3aac0"
+    },
+    {
+      "label": "Networking",
+      "color": "#22d3ee"
+    }
+  ],
+  "quickFacts": [
+    {
+      "label": "Degree",
+      "value": "BSc in Computer Science"
+    },
+    {
+      "label": "Status",
+      "value": "University Student"
+    },
+    {
+      "label": "Field",
+      "value": "Computer Science"
+    },
+    {
+      "label": "Interests",
+      "value": "Software Development, Networking, UI/UX, Information Technology"
+    },
+    {
+      "label": "Location",
+      "value": "Tanzania"
+    }
+  ]
+}
