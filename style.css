@@ -1633,8 +1633,13 @@ textarea:focus-visible {
   }
 }
 @media (max-width: 520px) {
-  .container {
+    .container {
     padding-inline: 18px;
+  }
+  .social-row {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 8px;
   }
   .skills-panel.is-active {
     grid-template-columns: 1fr;
