@@ -6,7 +6,7 @@
                             names the renderers already expect
    2. Utilities
    3. Renderers (skills, projects, education, certs, experience, etc.)
-   4. Interactions (theme, nav, cursor, canvas, reveal, modals, form)
+   4. Interactions (theme, nav, reveal, modals)
 ===================================================================== */
 
 /* =====================================================================
@@ -246,8 +246,6 @@ function renderHeroBasics() {
   $("#brandName").textContent = CONFIG.name;
   $("#heroFullName").textContent = CONFIG.tagline;
   $("#heroDesc").textContent = CONFIG.heroDescription;
-  $("#footerTagline").textContent =
-    "Computer Science Student • Developer • Tech Enthusiast";
   $("#footerYear").textContent = new Date().getFullYear();
 
   const cv = $("#downloadCvBtn");
@@ -263,44 +261,6 @@ function renderHeroBasics() {
     (n, cat) => n + cat.items.length,
     0,
   );
-}
-
-function renderTechBadges() {
-  const wrap = $("#techBadges");
-  const n = TECH_BADGES.length;
-  // Distribute badges evenly around an ellipse centered on the avatar using a
-  // FIXED PIXEL radius (not a percentage of the container). The hero-visual
-  // container is single-column from mobile all the way up to 980px, so its
-  // width varies hugely (e.g. ~340px on phones vs ~900px on tablets) — a
-  // percentage-based radius overshoots badly on wider single-column layouts.
-  // A fixed pixel radius tied to viewport tiers stays safe at every width.
-  const w = window.innerWidth;
-  let radiusX, radiusY;
-  if (w <= 480) {
-    radiusX = 95;
-    radiusY = 88;
-  } else if (w <= 980) {
-    radiusX = 170;
-    radiusY = 155;
-  } else if (w <= 1200) {
-    radiusX = 145;
-    radiusY = 130;
-  } else {
-    radiusX = 190;
-    radiusY = 165;
-  }
-
-  wrap.innerHTML = TECH_BADGES.map((b, i) => {
-    const angle = (2 * Math.PI * i) / n - Math.PI / 2;
-    const top = (radiusY * Math.sin(angle)).toFixed(1);
-    const left = (radiusX * Math.cos(angle)).toFixed(1);
-    const delay = (i * (5 / n)).toFixed(2);
-    return `
-      <span class="badge glass" style="top:calc(50% + ${top}px); left:calc(50% + ${left}px); animation-delay:${delay}s">
-        <span class="badge-dot" style="background:${b.color}"></span>${esc(b.label)}
-      </span>
-    `;
-  }).join("");
 }
 
 function renderQuickFacts() {
@@ -332,7 +292,7 @@ function renderSkills() {
       ${cat.items
         .map(
           (item) => `
-        <div class="skill-card glass tilt">
+        <div class="skill-card glass">
           <div class="skill-top">
             <span class="skill-icon"><svg aria-hidden="true"><use href="#${item.icon}"/></svg></span>
             <span class="skill-name">${esc(item.name)}</span>
@@ -362,25 +322,27 @@ function projectMediaHtml(p) {
   if (!isPlaceholder(p.image) && p.image) {
     return `<img src="${esc(p.image)}" alt="${esc(p.title)} preview" loading="lazy">`;
   }
-  return `<div class="project-media-fallback">${esc(p.category)} · ${esc(p.title.replace(/^\[.*?\]\s*/, ""))}</div>`;
+  return `<div class="project-media-fallback">${esc(p.category)} ${esc(p.title.replace(/^\[.*?\]\s*/, ""))}</div>`;
 }
 
 function projectCardHtml(p) {
   return `
-    <article class="project-card glass tilt" data-id="${esc(p.id)}" data-category="${esc(p.category)}" tabindex="0" role="button" aria-label="View details for ${esc(p.title)}">
+    <article class="project-card glass" data-id="${esc(p.id)}" data-category="${esc(p.category)}" tabindex="0" role="button" aria-label="View details for ${esc(p.title)}">
       <div class="project-media">
         ${projectMediaHtml(p)}
-        <span class="project-status">${esc(p.status)}</span>
-        <span class="project-year">${esc(p.year)}</span>
       </div>
       <div class="project-body">
-        <span class="project-cat">${esc(p.category)}</span>
+        <div class="project-meta">
+          <span>${esc(p.category)}</span>
+          <span>${esc(p.year)}</span>
+          <span>${esc(p.status)}</span>
+        </div>
         <h3 class="project-title">${esc(p.title)}</h3>
         <p class="project-desc">${esc(p.description)}</p>
         <div class="project-tech">${p.tech.map((t) => `<span>${esc(t)}</span>`).join("")}</div>
         <div class="project-links">
           ${!isPlaceholder(p.github) ? `<a href="${esc(p.github)}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg aria-hidden="true"><use href="#ic-external"/></svg> Code</a>` : `<span style="opacity:.5"><svg aria-hidden="true"><use href="#ic-external"/></svg> Code</span>`}
-          ${!isPlaceholder(p.demo) ? `<a href="${esc(p.demo)}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg aria-hidden="true"><use href="#ic-arrow"/></svg> Live</a>` : `<span style="opacity:.5"><svg aria-hidden="true"><use href="#ic-arrow"/></svg> Live</span>`}
+          ${!isPlaceholder(p.demo) ? `<a class="project-link-primary" href="${esc(p.demo)}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg aria-hidden="true"><use href="#ic-arrow"/></svg> Live</a>` : `<span style="opacity:.5"><svg aria-hidden="true"><use href="#ic-arrow"/></svg> Live</span>`}
         </div>
       </div>
     </article>
@@ -453,7 +415,7 @@ function openProjectModal(id) {
     </div>
     <div class="modal-body">
       <h3 id="pmTitle">${esc(p.title)}</h3>
-      <span class="modal-tagline">${esc(p.category)} · ${esc(p.year)} · ${esc(p.status)}</span>
+      <div class="modal-tagline"><span>${esc(p.category)}</span><span>${esc(p.year)}</span><span>${esc(p.status)}</span></div>
       <div class="modal-section"><h4>Problem</h4><p>${esc(d.problem)}</p></div>
       <div class="modal-section"><h4>Solution</h4><p>${esc(d.solution)}</p></div>
       ${d.features && d.features.length ? `<div class="modal-section"><h4>Features</h4><ul>${d.features.map((f) => `<li>${esc(f)}</li>`).join("")}</ul></div>` : ""}
@@ -476,7 +438,7 @@ function renderEducation() {
     <div class="timeline-item">
       <span class="timeline-dot"></span>
       <div class="timeline-card glass">
-        <span class="timeline-period"><svg aria-hidden="true" style="width:12px;height:12px;display:inline;vertical-align:-2px;margin-right:4px"><use href="#ic-calendar"/></svg>${esc(ed.start)} — ${esc(ed.end)}</span>
+        <span class="timeline-period"><svg aria-hidden="true" style="width:12px;height:12px;display:inline;vertical-align:-2px;margin-right:4px"><use href="#ic-calendar"/></svg>${esc(ed.start)} to ${esc(ed.end)}</span>
         <h3 class="timeline-title">${esc(ed.qualification)}</h3>
         <p class="timeline-org">${esc(ed.institution)}</p>
         <p class="timeline-loc">${esc(ed.location)}</p>
@@ -495,7 +457,7 @@ function renderExperience() {
     <div class="timeline-item">
       <span class="timeline-dot"></span>
       <div class="timeline-card glass">
-        <span class="timeline-period"><svg aria-hidden="true" style="width:12px;height:12px;display:inline;vertical-align:-2px;margin-right:4px"><use href="#ic-briefcase"/></svg>${esc(ex.start)} — ${esc(ex.end)}</span>
+        <span class="timeline-period"><svg aria-hidden="true" style="width:12px;height:12px;display:inline;vertical-align:-2px;margin-right:4px"><use href="#ic-briefcase"/></svg>${esc(ex.start)} to ${esc(ex.end)}</span>
         <h3 class="timeline-title">${esc(ex.position)}</h3>
         <p class="timeline-org">${esc(ex.org)}</p>
         <p class="timeline-loc">${esc(ex.location)}</p>
@@ -511,7 +473,7 @@ function renderCertificates() {
   const el = $("#certsGrid");
   el.innerHTML = CERTIFICATES.map(
     (c, i) => `
-    <div class="cert-card glass tilt" data-idx="${i}" tabindex="0" role="button" aria-label="View certificate: ${esc(c.name)}">
+    <div class="cert-card glass" data-idx="${i}" tabindex="0" role="button" aria-label="View certificate: ${esc(c.name)}">
       <div class="cert-top">
         <span class="cert-icon"><svg aria-hidden="true"><use href="#ic-award"/></svg></span>
         <span class="cert-date">${esc(c.date)}</span>
@@ -534,7 +496,7 @@ function renderCertificates() {
       </div>
       <div class="modal-body">
         <h3 id="cmTitle">${esc(c.name)}</h3>
-        <span class="modal-tagline">${esc(c.org)} · ${esc(c.date)}</span>
+        <div class="modal-tagline"><span>${esc(c.org)}</span><span>${esc(c.date)}</span></div>
         <div class="modal-section"><h4>Description</h4><p>${esc(c.description)}</p></div>
         <div class="modal-section"><h4>Credential ID</h4><p>${esc(c.credentialId)}</p></div>
         <div class="modal-actions">
@@ -561,7 +523,7 @@ function renderCertificates() {
 function renderAchievements() {
   $("#achieveGrid").innerHTML = ACHIEVEMENTS.map(
     (a) => `
-    <div class="achieve-card glass tilt">
+    <div class="achieve-card glass">
       <span class="achieve-icon"><svg aria-hidden="true"><use href="#${a.icon}"/></svg></span>
       <h3 class="achieve-title">${esc(a.title)}</h3>
       <p class="achieve-desc">${esc(a.desc)}</p>
@@ -665,25 +627,27 @@ function renderContactInfo() {
     )
     .join("");
 
+  // Simple outline icons (stroke only) so the social row matches the look
+  // of the email / phone / location icons above it, rather than mixing in
+  // solid brand-logo glyphs.
   const brandIcons = {
-    github: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.4 3.6 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.4-5.5-6.1 0-1.3.5-2.5 1.2-3.3-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 3 .1 3.3.8.8 1.2 2 1.2 3.3 0 4.7-2.8 5.8-5.5 6.1.4.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>`,
-    linkedin: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.38a1.56 1.56 0 0 1 0 3.12ZM5.38 10.53h2.88v8.78H5.38v-8.78Zm4.56 0h2.76v1.2h.04c.38-.72 1.32-1.48 2.72-1.48 2.9 0 3.44 1.91 3.44 4.39v4.67h-2.88v-4.38c0-1.04-.02-2.38-1.45-2.38-1.46 0-1.68 1.14-1.68 2.3v4.46H9.94v-8.78Z"/></svg>`,
-    instagram: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.8" y="2.8" width="18.4" height="18.4" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.4" fill="currentColor"/></svg>`,
-    tiktok: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.3 2.2c.3 1.8 1.5 3 3.3 3.3v2.5a6.2 6.2 0 0 1-3.2-.9v6.1c0 2.9-2.3 5.2-5.2 5.2A5.2 5.2 0 0 1 3 13.2a5.2 5.2 0 0 1 5.2-5.2c.3 0 .6 0 .9.1v2.6a2.7 2.7 0 0 0-.9-.2 2.7 2.7 0 0 0 0 5.4 2.7 2.7 0 0 0 2.7-2.7V2.2h2.4Z"/></svg>`,
-    whatsapp: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.93 9.93 0 0 0-8.54 15.05L2.1 22l5.12-1.45a9.9 9.9 0 1 0 4.82-18.55ZM12 18.5c-1.62 0-3.13-.43-4.47-1.24l-.32-.19-3.03.86.81-2.97-.2-.31A7.94 7.94 0 0 1 12 4.1a7.9 7.9 0 0 1 0 15.8Zm4.45-5.95c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.18-1.4-1.32-1.63-.14-.24-.02-.37.1-.5.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.29-.74-1.76-.2-.48-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.57 4.06 3.6.57.25 1.01.4 1.36.52.58.18 1.1.15 1.52.09.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.21-.16-.46-.28Z"/></svg>`,
+    github: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13.2" r="6"/><path d="M8.3 8 6.7 5.2M15.7 8l1.6-2.8"/><circle cx="9.6" cy="12.8" r="0.6" fill="currentColor" stroke="none"/><circle cx="14.4" cy="12.8" r="0.6" fill="currentColor" stroke="none"/><path d="M9.5 16.3c.7.5 1.6.7 2.5.7s1.8-.2 2.5-.7"/></svg>`,
+    linkedin: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="8.3" cy="8.6" r="0.5" fill="currentColor" stroke="none"/><path d="M8.3 11.3v6.2"/><path d="M12.3 17.5v-4c0-1.3.9-2.1 2-2.1s1.9.8 1.9 2.1v4"/><path d="M12.3 11.3v6.2"/></svg>`,
+    instagram: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.4" cy="7.6" r="0.6" fill="currentColor" stroke="none"/></svg>`,
+    tiktok: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13.2 4.3v10.4a3.3 3.3 0 1 1-3.3-3.3c.3 0 .6 0 .9.1"/><path d="M13.2 4.3c.3 2 1.7 3.4 3.6 3.7"/></svg>`,
+    whatsapp: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.2a7.8 7.8 0 0 0-6.7 11.8L4.3 20l4.1-1a7.8 7.8 0 1 0 3.6-14.8Z"/><path d="M8.7 9.5c0 3.4 2.4 5.8 5.8 5.8"/></svg>`,
   };
 
   const socials = Object.entries(CONFIG.social || {})
     .map(([key, s]) => {
       const l = safeLink(s.url, s.label);
       const icon = brandIcons[key] || `<span class="social-letter">${esc(s.handle)}</span>`;
-      return `<a class="social-btn social-btn--${esc(key)}" href="${esc(l.href)}" ${l.disabled ? 'aria-disabled="true" title="Add your ' + esc(s.label) + ' URL in data/profile.json"' : 'target="_blank" rel="noopener"'}>${icon}<span class="tooltip">${esc(s.label)}</span></a>`;
+      return `<a class="social-btn" href="${esc(l.href)}" ${l.disabled ? 'aria-disabled="true" title="Add your ' + esc(s.label) + ' URL in data/profile.json"' : 'target="_blank" rel="noopener"'}>${icon}<span class="tooltip">${esc(s.label)}</span></a>`;
     })
     .join("");
 
   $("#contactInfo").innerHTML =
     rowsHtml + `<div class="social-row">${socials}</div>`;
-  $("#footerSocial").innerHTML = socials;
 }
 
 /* =====================================================================
@@ -795,93 +759,6 @@ function initReveal() {
   items.forEach((el) => io.observe(el));
 }
 
-/* --- Ambient network-topology canvas (signature background element) --- */
-function initNetworkCanvas() {
-  const canvas = $("#network-canvas");
-  const ctx = canvas.getContext("2d");
-  let w,
-    h,
-    nodes = [];
-  const reduced = prefersReducedMotion();
-  const isSmall = window.innerWidth < 720;
-  const COUNT = reduced ? 0 : isSmall ? 26 : 52;
-  const LINK_DIST = isSmall ? 110 : 150;
-
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
-  function makeNodes() {
-    nodes = Array.from({ length: COUNT }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-    }));
-  }
-  function getVar(name) {
-    return getComputedStyle(document.documentElement)
-      .getPropertyValue(name)
-      .trim();
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, w, h);
-    const dotColor = getVar("--accent-secondary-rgb") || "34,211,238";
-    const lineColor = getVar("--accent-primary-rgb") || "124,108,240";
-
-    for (let i = 0; i < nodes.length; i++) {
-      const n = nodes[i];
-      n.x += n.vx;
-      n.y += n.vy;
-      if (n.x < 0 || n.x > w) n.vx *= -1;
-      if (n.y < 0 || n.y > h) n.vy *= -1;
-    }
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i],
-          b = nodes[j];
-        const d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d < LINK_DIST) {
-          ctx.strokeStyle = `rgba(${lineColor}, ${(1 - d / LINK_DIST) * 0.18})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
-      }
-    }
-    nodes.forEach((n) => {
-      ctx.fillStyle = `rgba(${dotColor}, 0.55)`;
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, 1.6, 0, Math.PI * 2);
-      ctx.fill();
-    });
-  }
-
-  let raf;
-  function loop() {
-    draw();
-    raf = requestAnimationFrame(loop);
-  }
-
-  resize();
-  makeNodes();
-  if (!reduced && COUNT > 0) {
-    loop();
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) cancelAnimationFrame(raf);
-      else loop();
-    });
-  }
-  window.addEventListener("resize", () => {
-    resize();
-    makeNodes();
-    if (reduced || COUNT === 0) draw();
-  });
-}
-
 /* --- Modals --- */
 let lastFocused = null;
 function openModal(sel) {
@@ -918,7 +795,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadPortfolioData();
 
   renderHeroBasics();
-  renderTechBadges();
   renderQuickFacts();
   renderSkills();
   renderProjects();
@@ -936,14 +812,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initMobileMenu();
   initScrollProgress();
   initReveal();
-  initNetworkCanvas();
   initModals();
-
-  // Re-layout badges on resize (debounced) so orientation changes / window
-  // resizing keep the ring radius appropriate for the new viewport width.
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(renderTechBadges, 200);
-  });
 });

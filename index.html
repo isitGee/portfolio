@@ -11,38 +11,25 @@
 
     <!-- ============================================================
      FONTS
-     Space Grotesk  -> display / headings (technical, geometric)
-     Inter          -> body copy
-     JetBrains Mono -> labels, tags, meta text (developer feel)
+     Segoe UI Variable / Segoe UI are used automatically on Windows.
+     Source Sans 3 and IBM Plex Sans are loaded as the fallback for
+     everyone else, matching the same Windows 11 style.
 ============================================================ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/images/Gee.png" />
     <script type="module" src="script.js" defer></script>
-     <!-- Zapier Chatbot -->
-    <script async type="module"
-        src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js">
-    </script>
   </head>
   <body>
     <a href="#home" class="skip-link">Skip to content</a>
 
-    <!-- Scroll progress11 -->
+    <!-- Scroll progress -->
     <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Ambient background -->
-    <div class="bg-fx" aria-hidden="true">
-      <canvas id="network-canvas"></canvas>
-      <div class="grid-overlay"></div>
-      <div class="blob blob--1"></div>
-      <div class="blob blob--2"></div>
-      <div class="blob blob--3"></div>
-    </div>
 
     <!-- Icon sprite (functional UI icons — hand-drawn, not brand logos) -->
     <svg style="display: none" aria-hidden="true">
@@ -409,8 +396,7 @@
         <div class="container hero-grid">
           <div class="hero-copy" data-reveal>
             <span class="status-pill glass"
-              ><span class="status-dot"></span> Open to internships &amp;
-              collaborations</span
+              >Open to internships &amp; collaborations</span
             >
             <h1 class="hero-title">
               <span class="accent">Mwanga</span> G .F
@@ -423,7 +409,7 @@
               sharpening my skills in software development, networking, and
               design. I build projects to learn by doing, experiment with new
               technologies, and I'm steadily working toward becoming a
-              well-rounded tech professional — one commit at a time.
+              well-rounded tech professional, one commit at a time.
             </p>
             <div class="hero-actions">
               <a href="#projects" class="btn btn-primary">
@@ -449,10 +435,7 @@
           </div>
 
           <div class="hero-visual" data-reveal data-reveal-delay="2">
-            <div class="orbit-ring orbit-ring--1" aria-hidden="true"></div>
-            <div class="orbit-ring orbit-ring--2" aria-hidden="true"></div>
-            <div class="avatar-card glass glass-strong tilt" id="avatarCard">
-              <div class="avatar-glow" aria-hidden="true"></div>
+            <div class="avatar-card glass glass-strong" id="avatarCard">
               <div class="avatar-inner">
                 <img
                   src="assets/images/Gee.png"
@@ -462,12 +445,7 @@
                 />
               </div>
             </div>
-            <div id="techBadges"></div>
           </div>
-        </div>
-
-        <div class="scroll-cue" aria-hidden="true">
-          <span>Scroll</span><span class="scroll-cue-line"></span>
         </div>
       </section>
 
@@ -705,36 +683,8 @@
 ============================================================ -->
     <footer class="footer">
       <div class="container">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <a href="#home" class="brand">
-              <img
-                src="assets/images/Gee.png"
-                alt="George brand mark"
-                class="brand-mark"
-              />
-              GFM
-            </a>
-            <p id="footerTagline">
-              Computer Science Student • Developer • Tech Enthusiast
-            </p>
-          </div>
-          <div class="footer-links">
-            <div class="footer-col">
-              <h4>Navigate</h4>
-              <a href="#about">About</a>
-              <a href="#projects">Projects</a>
-              <a href="#education">Education</a>
-              <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-col">
-              <h4>Connect</h4>
-              <div class="social-row" id="footerSocial"></div>
-            </div>
-          </div>
-        </div>
         <div class="footer-bottom">
-          <p>&copy; <span id="footerYear"></span> Mwanga George. All rights reserved.</p>
+          <p>&copy; <span id="footerYear"></span> George. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -761,77 +711,5 @@
     >
       <div class="modal-box glass glass-strong" id="cmBox"></div>
     </div>
-    <!-- Zapier chatbot will be inserted just after the Contact section -->
-    <script>
-      (function () {
-        const chatbotId = 'cmsz5y3xi0035rvtzhwpkrms9';
-
-        // guard: don't insert twice
-        if (document.getElementById('zapierChatWrapper')) return;
-
-        const wrapper = document.createElement('div');
-        wrapper.id = 'zapierChatWrapper';
-        wrapper.className = 'chatbot-wrapper';
-
-        const embed = document.createElement('zapier-interfaces-chatbot-embed');
-        embed.setAttribute('is-popup', 'false');
-        embed.setAttribute('chatbot-id', chatbotId);
-        embed.style.width = '400px';
-        embed.style.height = '600px';
-
-        wrapper.appendChild(embed);
-
-        const contactGrid = document.querySelector('.contact-grid');
-        // Prefer inserting into the contact grid so it sits to the right on desktop
-        if (contactGrid) {
-          // insert after the contact-info element if present
-          const info = document.getElementById('contactInfo');
-          if (info && info.parentNode === contactGrid) {
-            info.insertAdjacentElement('afterend', wrapper);
-          } else {
-            contactGrid.appendChild(wrapper);
-          }
-        } else {
-          // fallback: append after the contact section
-          const contactSection = document.getElementById('contact');
-          if (contactSection && contactSection.parentNode) {
-            contactSection.parentNode.insertBefore(wrapper, contactSection.nextSibling);
-          } else {
-            document.body.appendChild(wrapper);
-          }
-        }
-
-        // keep the chatbot look in sync with the site's theme attribute
-        function applyTheme() {
-          const theme = document.documentElement.getAttribute('data-theme') || 'dark';
-          wrapper.dataset.theme = theme;
-        }
-
-        applyTheme();
-        const obs = new MutationObserver(applyTheme);
-        obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-
-        // responsive sizing
-        function updateSize() {
-          if (window.innerWidth < 520) {
-            embed.style.width = '100%';
-            embed.style.height = '420px';
-          } else {
-            embed.style.width = '400px';
-            embed.style.height = '600px';
-          }
-        }
-
-        updateSize();
-        window.addEventListener('resize', updateSize);
-        // show the chatbot only after the page fully loads to avoid layout issues
-        window.addEventListener('load', function () {
-          // small delay so any initial layout settles
-          setTimeout(function () {
-            wrapper.classList.add('chatbot-visible');
-          }, 250);
-        });
-      })();
-    </script>
   </body>
 </html>
