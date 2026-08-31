@@ -1,22 +1,22 @@
 [
   {
     "id": "Project 01",
-    "title": "GEE PLAYS — Gaming Hub",
+    "title": "GEE PLAYS Gaming Hub",
     "description": "A gaming hub that allows users to explore, play, and share their favorite games. It features a user-friendly interface, game recommendations, and social sharing capabilities.",
     "category": "Web",
     "year": "2026",
     "status": "In Progress",
     "featured": true,
     "image": "assets/images/projects/GeePlays.png",
-    "tech": ["HTML", "CSS", "JavaScript"],
+    "tech": ["HTML", "CSS", "JavaScript", "API integration"],
     "github": "https://github.com/isitGee/GeePlays",
     "demo": "https://isitgee.github.io/GeePlays/",
     "details": {
       "problem": "The website helps gamers find and play games easily, providing a platform for game discovery and social interaction.",
       "solution": "Directly access a curated list of games, read reviews, and share experiences with other gamers.",
       "features": ["Search functionality", "Game recommendations", "Social sharing"],
-      "learned": "Hosting and deploying a web application, and implementing responsive design for various devices.",
-      "challenges": "Managing game data and ensuring the website remains responsive across different screen sizes. solving this by using media queries and testing on multiple devices."
+      "learned": "Hosting and deploying a web application, and implementing responsive design for various devices. Also handking API and proxy to bypass browser to API server communicatons",
+      "challenges": "Managing game data and ensuring the website remains responsive across different screen sizes. solving this by using media queries and testing on multiple devices. Also  a redirect pretending to be a CORS error solved by turning off Vercel Authentication for the project"
     }
   },
   {

@@ -2,7 +2,7 @@
   "config": {
     "name": "George",
     "fullName": "GEORGE F. MWANGA",
-    "tagline": "Computer Science Student • Developer • UI/UX Enthusiast • Tech Explorer",
+    "tagline": "Computer Science Student, Junior Developer, UI/UX Enthusiast and Tech Explorer",
     "heroDescription": "I'm studying Computer Science at the University of Dar es Salaam, sharpening my skills in software development, networking, and design. I build projects to learn by doing, experiment with new technologies, and I'm steadily working toward becoming a well-rounded tech professional, one commit at a time.",
     "email": "georgemwanga116@gmail.com",
     "phone": "+255762358050",
@@ -93,8 +93,12 @@
       "value": "Software Development, Networking, UI/UX, Information Technology"
     },
     {
+      "label": "Institution",
+      "value": "University of Dar es salaam"
+    },
+    {
       "label": "Location",
-      "value": "Tanzania"
+      "value": "Dar es salaam ,Tanzania"
     }
   ]
 }

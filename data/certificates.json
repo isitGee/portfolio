@@ -7,5 +7,14 @@
     "image": "",
     "link": "in progress",
     "description": "Cisco Certified Network Associate (CCNA) is a certification program that validates an individual's knowledge and skills in networking fundamentals, IP connectivity, security, and automation. It is designed for IT professionals seeking to enhance their networking expertise and advance their careers in the field of computer networking."
+  },
+{
+    "name": "AWS cloud practitioner essentials",
+    "org": "AWS",
+    "date": "in progress",
+    "credentialId": "*****-*****",
+    "image": "",
+    "link": "in progress",
+    "description": "AWS cloud practitioner essentials is a certification program that validates an individual's knowledge and skills in cloud computing, AWS services, and best practices. It is designed for IT professionals seeking to enhance their cloud expertise and advance their careers in the field of cloud computing."
   }
 ]
