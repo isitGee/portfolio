@@ -47,7 +47,7 @@ let CONFIG = {
   email: "",
   phone: "",
   location: "",
-  cvPath: "",
+  cvPath:"/portfolio/assets/George_Mwanga_CV.pdf",
   githubUsername: "",
   social: {},
 };
