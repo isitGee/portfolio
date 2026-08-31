@@ -21,29 +21,37 @@
   },
   {
     "id": "Project 02",
-    "title": "in progress",
-    "description": "in progress",
-    "category": "Academic",
+    "title": "WiFi Billing system",
+    "description": "web-based Wi-Fi management and subscription system that allows users to connect to a network, view available internet packages, make payments, and manage their subscriptions through a simple interface",
+    "category": "Networking",
     "year": "2026",
-    "status": "Planned",
-    "featured": false,
-    "image": "",
-    "tech": ["[TECH]"],
-    "github": "[GITHUB REPO URL]",
+    "status": "In progress",
+    "featured": true,
+    "image": "assets/images/projects/GeeWifi.png",
+    "tech": ["React", "Networking" , "Jsx"],
+    "github": "https://isitgee.github.io/GeeWifi/",
     "demo": "[LIVE DEMO URL]",
     "details": {
-      "problem": "[PROBLEM]",
-      "solution": "[SOLUTION]",
-      "features": ["[FEATURE 1]", "[FEATURE 2]", "[FEATURE 3]"],
-      "learned": "[WHAT I LEARNED]",
-      "challenges": "[CHALLENGES FACED AND HOW I SOLVED THEM]"
+"problem": "Managing Wi-Fi users, internet packages, payments, and subscriptions manually can be inefficient and difficult to manage as the number of users grows.",
+
+"solution": "GeeWiFi provides a centralized web-based system for user authentication, internet package selection, payments, and subscription management.",
+
+"features": [
+  "User authentication and Wi-Fi access management",
+  "Internet package selection and subscription management",
+  "Payment integration and transaction handling"
+],
+
+"learned": "I learned how to structure a web-based service using separate frontend and backend services, manage user and subscription data, and design a simple user-friendly interface for a real-world networking system.",
+
+"challenges": "One of the main challenges was connecting the frontend with different services while keeping authentication, packages, payments, and subscriptions synchronized. I solved this by separating the system into service layers and using a clear data flow between each component."
     }
   },
   {
     "id": "Project 03",
     "title": "in progress",
     "description": "in progress",
-    "category": "Networking",
+    "category": "personal",
     "year": "2026",
     "status": "Planned",
     "featured": false,
