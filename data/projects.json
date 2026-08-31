@@ -29,7 +29,7 @@
     "featured": true,
     "image": "assets/images/projects/GeeWifi.png",
     "tech": ["React", "Networking" , "Jsx"],
-    "github": "https://isitgee.github.io/GeeWifi/",
+    "github": "https://github.com/isitGee/GeeWifi",
     "demo": "[LIVE DEMO URL]",
     "details": {
 "problem": "Managing Wi-Fi users, internet packages, payments, and subscriptions manually can be inefficient and difficult to manage as the number of users grows.",
