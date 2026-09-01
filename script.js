@@ -47,7 +47,7 @@ let CONFIG = {
   email: "",
   phone: "",
   location: "",
-  cvPath:"/portfolio/assets/George_Mwanga_CV.pdf",
+  cvPath: "assets/George_Mwanga_CV.pdf",
   githubUsername: "",
   social: {},
 };
@@ -560,7 +560,9 @@ async function renderGithubPlaceholder() {
     }
 
     const repos = await response.json();
-    const publicRepos = (Array.isArray(repos) ? repos : []).filter((repo) => !repo.fork);
+    const publicRepos = (Array.isArray(repos) ? repos : []).filter(
+      (repo) => !repo.fork,
+    );
 
     if (!publicRepos.length) {
       container.innerHTML = `<p class="empty-note">No public repositories yet.</p>`;
@@ -641,7 +643,9 @@ function renderContactInfo() {
   const socials = Object.entries(CONFIG.social || {})
     .map(([key, s]) => {
       const l = safeLink(s.url, s.label);
-      const icon = brandIcons[key] || `<span class="social-letter">${esc(s.handle)}</span>`;
+      const icon =
+        brandIcons[key] ||
+        `<span class="social-letter">${esc(s.handle)}</span>`;
       return `<a class="social-btn" href="${esc(l.href)}" ${l.disabled ? 'aria-disabled="true" title="Add your ' + esc(s.label) + ' URL in data/profile.json"' : 'target="_blank" rel="noopener"'}>${icon}<span class="tooltip">${esc(s.label)}</span></a>`;
     })
     .join("");
