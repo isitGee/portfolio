@@ -27,4 +27,35 @@
     "description": "NECTA is a certification program that validates an individual's knowledge and skills in various fields. It is designed for individuals seeking to enhance their expertise and advance their careers in their respective fields."
   }
 
+  ,
+  {
+    "name": "NECTA Form Four Certificate",
+    "org": "NECTA",
+    "date": "2021",
+    "credentialId": "S1596-0174-2021",
+    "image": "assets/images/certificates/Form_4.png",
+    "file": "assets/certificates/Form_4.pdf",
+    "link": "https://www.necta.go.tz",
+    "description": "Certificate awarded for completion of Form Four (CSEE) by NECTA."
+  },
+  {
+    "name": "NECTA Form Two Certificate",
+    "org": "NECTA",
+    "date": "2019",
+    "credentialId": "S1596-0209-2019",
+    "image": "assets/images/certificates/Form_2.png",
+    "file": "assets/certificates/Form_2.pdf",
+    "link": "https://www.necta.go.tz",
+    "description": "Form Two school certificate recorded with NECTA."
+  },
+  {
+    "name": "Primary School Certificate",
+    "org": "NECTA",
+    "date": "2017",
+    "credentialId": "PS0401008-033-2017",
+    "image": "assets/images/certificates/Primary.png",
+    "file": "assets/certificates/Primary.pdf",
+    "link": "https://www.necta.go.tz",
+    "description": "Primary school completion certificate."
+  }
 ]

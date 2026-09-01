@@ -501,6 +501,7 @@ function renderCertificates() {
         <div class="modal-section"><h4>Credential ID</h4><p>${esc(c.credentialId)}</p></div>
         <div class="modal-actions">
           ${!isPlaceholder(c.link) ? `<a href="${esc(c.link)}" target="_blank" rel="noopener" class="btn btn-primary"><svg aria-hidden="true"><use href="#ic-external"/></svg> Verify Certificate</a>` : `<button class="btn btn-primary" disabled title="Add a verification link in data/certificates.json">Verification link pending</button>`}
+          ${!isPlaceholder(c.file) && c.file ? `<a href="${esc(c.file)}" download="${(c.name || "certificate").replace(/[^a-z0-9_.-]/gi, "_")}.pdf" class="btn btn-ghost"><svg aria-hidden="true"><use href="#ic-download"/></svg> Download PDF</a>` : ``}
         </div>
       </div>
     `;
