@@ -18,12 +18,13 @@
     "description": "AWS cloud practitioner essentials is a certification program that validates an individual's knowledge and skills in cloud computing, AWS services, and best practices. It is designed for IT professionals seeking to enhance their cloud expertise and advance their careers in the field of cloud computing."
   },
   {
-    "name": "",
+    "name": "NECTA Form six Certificate",
     "org": "NECTA",
-    "date": "2020",
-    "credentialId": "",
-    "image": "",
-    "link": "necta.go.tz",
+    "date": "2024",
+    "credentialId": "S0110-0554-2024",
+    "image": "assets/images/certificates/Form_6.png",
+    "file": "assets/certificates/Form_6.pdf",
+    "link": "https://www.necta.go.tz",
     "description": "NECTA is a certification program that validates an individual's knowledge and skills in various fields. It is designed for individuals seeking to enhance their expertise and advance their careers in their respective fields."
   }
 
