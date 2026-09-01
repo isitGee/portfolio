@@ -1,54 +1,15 @@
-/* =====================================================================
-   GEE — PORTFOLIO SCRIPT
-   =====================================================================
-   1. DATA LOADING     <-- content now lives in /data/*.json, this
-                            section fetches it into the same variable
-                            names the renderers already expect
-   2. Utilities
-   3. Renderers (skills, projects, education, certs, experience, etc.)
-   4. Interactions (theme, nav, reveal, modals)
-===================================================================== */
-
-/* =====================================================================
-   1. DATA LOADING
-   ===================================================================== */
-
-/*
-  All portfolio CONTENT lives in JSON files under the `data/` folder.
-  To add or edit a project, qualification, certificate, skill, or
-  experience entry, edit the matching file inside `data/` — you should
-  not need to touch this script at all:
-
-    data/profile.json       -> CONFIG, TECH_BADGES, QUICK_FACTS
-    data/skills.json        -> SKILLS
-    data/projects.json      -> PROJECTS
-    data/education.json     -> EDUCATION
-    data/certificates.json  -> CERTIFICATES
-    data/experience.json    -> EXPERIENCE
-    data/achievements.json  -> ACHIEVEMENTS
-
-  Everything in sections 2-4 (renderers, interactions) is untouched from
-  before — it just reads these same variable names, which now get
-  filled in by fetch() at startup instead of being hard-coded here.
-
-  NOTE: fetch() of local JSON files does not work when index.html is
-  opened directly as a file:// URL. Serve the project locally (e.g. VS
-  Code "Live Server") while developing. It works as-is once deployed to
-  GitHub Pages.
-*/
-
 // Safe defaults so the page never renders "undefined" if a fetch fails
 // before the real data arrives / in case a JSON file is unreachable.
 let CONFIG = {
   name: "Portfolio",
-  fullName: "",
+  fullName: "George Fredrick Mwanga",
   tagline: "",
   heroDescription: "",
-  email: "",
-  phone: "",
-  location: "",
+  email: "georgemwanga116@gmail.com",
+  phone: "+255762358050",
+  location: "Dar es salaam, Tanzania",
   cvPath: "assets/George_Mwanga_CV.pdf",
-  githubUsername: "",
+  githubUsername: "isitGee",
   social: {},
 };
 let TECH_BADGES = [];
@@ -60,9 +21,6 @@ let CERTIFICATES = [];
 let EXPERIENCE = [];
 let ACHIEVEMENTS = [];
 
-// Filter chips for the Projects section. This is interface configuration
-// rather than content that changes with each new project, so it stays
-// here — add a name below if projects.json starts using a new category.
 const PROJECT_CATEGORIES = [
   "All",
   "Web",
