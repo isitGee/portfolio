@@ -28,9 +28,9 @@ This version focuses on improving the overall experience compared to the previou
 
 ## About Me
 
-I'm **George Fredrick Mwanga**, also known as **Gee**.
+I'm **George Fredrick Mwanga**.
 
-I'm a Computer Science student at the **University of Dar es Salaam (UDSM)** with interests across software development, UI/UX design, networking, and technology.
+I'm a Computer Science student at the **University of Dar es Salaam (UDSM)** with interests across software development, UI/UX design, networking, and Information technology.
 
 I'm continuously learning by building real projects, experimenting with new technologies, and documenting what I learn along the way.
 
