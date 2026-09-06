@@ -689,16 +689,44 @@ function initMobileMenu() {
 }
 
 /* --- Scroll progress bar --- */
-function initScrollProgress() {
-  const bar = $("#scrollProgress");
-  const update = () => {
-    const h = document.documentElement;
-    const scrolled = h.scrollTop || document.body.scrollTop;
-    const height = h.scrollHeight - h.clientHeight;
-    bar.style.width = height > 0 ? `${(scrolled / height) * 100}%` : "0%";
+let modalScrollState = null;
+
+function getScrollPosition() {
+  return {
+    x: window.scrollX || window.pageXOffset || 0,
+    y: window.scrollY || window.pageYOffset || 0,
   };
-  document.addEventListener("scroll", update, { passive: true });
-  update();
+}
+
+function restoreScrollPosition(position) {
+  if (
+    !position ||
+    typeof position.x !== "number" ||
+    typeof position.y !== "number"
+  ) {
+    return;
+  }
+
+  window.scrollTo({
+    left: position.x,
+    top: position.y,
+    behavior: "auto",
+  });
+}
+
+function updateScrollProgress() {
+  const bar = $("#scrollProgress");
+  if (!bar) return;
+
+  const h = document.documentElement;
+  const scrolled = h.scrollTop || document.body.scrollTop;
+  const height = h.scrollHeight - h.clientHeight;
+  bar.style.width = height > 0 ? `${(scrolled / height) * 100}%` : "0%";
+}
+
+function initScrollProgress() {
+  document.addEventListener("scroll", updateScrollProgress, { passive: true });
+  updateScrollProgress();
 }
 
 /* --- Reveal on load --- */
@@ -708,19 +736,30 @@ function initReveal() {
 }
 
 /* --- Modals --- */
-let lastFocused = null;
 function openModal(sel) {
   const overlay = $(sel);
-  lastFocused = document.activeElement;
+  modalScrollState = getScrollPosition();
+  overlay.dataset.scrollPosition = JSON.stringify(modalScrollState);
   overlay.classList.add("is-open");
   document.body.style.overflow = "hidden";
-  const closeBtn = overlay.querySelector("[data-close]");
-  if (closeBtn) closeBtn.focus();
+  document.documentElement.style.overflow = "hidden";
 }
 function closeModal(overlay) {
+  const storedPosition = overlay.dataset.scrollPosition
+    ? JSON.parse(overlay.dataset.scrollPosition)
+    : modalScrollState;
+
   overlay.classList.remove("is-open");
   document.body.style.overflow = "";
-  if (lastFocused) lastFocused.focus();
+  document.documentElement.style.overflow = "";
+
+  if (storedPosition) {
+    restoreScrollPosition(storedPosition);
+    updateScrollProgress();
+  }
+
+  delete overlay.dataset.scrollPosition;
+  modalScrollState = null;
 }
 function initModals() {
   $$(".modal-overlay").forEach((overlay) => {
