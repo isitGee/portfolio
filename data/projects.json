@@ -48,22 +48,22 @@
   },
   {
     "id": "Project 03",
-    "title": "in progress",
-    "description": "in progress",
+    "title": "GeeAI Chatbot",
+    "description": "GeeAI is a chatbot created using gemini-3.6-flash API, designed to provide users with an interactive and intelligent conversational experience. It can answer questions, provide information, and engage in natural language conversations.",
     "category": "personal",
     "year": "2026",
-    "status": "Planned",
-    "featured": false,
-    "image": "",
-    "tech": ["[TECH]"],
-    "github": "[GITHUB REPO URL]",
-    "demo": "[LIVE DEMO URL]",
+    "status": "Finishing",
+    "featured": true,
+    "image": "assets/images/projects/GeeAI.png",
+    "tech": ["HTML", "CSS", "JavaScript", "API integration"],
+    "github": "https://github.com/isitGee/GeeAI",
+    "demo": "https://geeai-isitgee.vercel.app/",
     "details": {
-      "problem": "[PROBLEM]",
-      "solution": "[SOLUTION]",
-      "features": ["[FEATURE 1]", "[FEATURE 2]", "[FEATURE 3]"],
-      "learned": "[WHAT I LEARNED]",
-      "challenges": "[CHALLENGES FACED AND HOW I SOLVED THEM]"
+      "problem": "The chatbot aims to provide users with a convenient and interactive way to access information and engage in conversations, enhancing user experience and accessibility.",
+      "solution": "GeeAI provides a seamless integration of the gemini-3.6-flash API to deliver an intelligent and responsive chatbot experience.",
+      "features": ["Natural language processing", "Contextual understanding", "Multi-turn conversations"],
+      "learned": "I learned how to integrate external APIs into web applications and manage the flow of data between the frontend and backend services.",
+      "challenges": "One of the main challenges was obtaining free AI API access and managing the associated costs."
     }
   }
 ]
