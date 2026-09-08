@@ -21,29 +21,22 @@
   },
   {
     "id": "Project 02",
-    "title": "GeeWifi WiFi Billing system",
-    "description": "web-based Wi-Fi management and subscription system that allows users to connect to a network, view available internet packages, make payments, and manage their subscriptions through a simple interface",
-    "category": "Networking",
-    "year": "2026",
-    "status": "In progress",
+    "title": "Portfolio Website",
+    "description": "A responsive portfolio website to showcase my projects and skills.",
+    "category": "website",
+    "year": "2023",
+    "status": "Completed",
     "featured": true,
-    "image": "assets/images/projects/GeeWifi.png",
-    "tech": ["React", "Networking" , "Jsx"],
-    "github": "https://github.com/isitGee/GeeWifi",
+    "image": "assets/images/projects/portfolio.png",
+    "tech": ["HTML","CSS","JavaScript" , "json"],
+    "github": "https://github.com/isitGee/portfolio",
+    "demo": "https://isitgee.github.io/portfolio/",
     "details": {
-"problem": "Managing Wi-Fi users, internet packages, payments, and subscriptions manually can be inefficient and difficult to manage as the number of users grows.",
-
-"solution": "GeeWiFi provides a centralized web-based system for user authentication, internet package selection, payments, and subscription management.",
-
-"features": [
-  "User authentication and Wi-Fi access management",
-  "Internet package selection and subscription management",
-  "Payment integration and transaction handling"
-],
-
-"learned": "I learned how to structure a web-based service using separate frontend and backend services, manage user and subscription data, and design a simple user-friendly interface for a real-world networking system.",
-
-"challenges": "One of the main challenges was connecting the frontend with different services while keeping authentication, packages, payments, and subscriptions synchronized. I solved this by separating the system into service layers and using a clear data flow between each component."
+      "problem": "The portfolio website aims to provide a visually appealing and functional platform to showcase my projects and skills.",
+      "solution": "The website features a responsive design, smooth navigation, and an intuitive layout to enhance user experience.",
+      "features": ["Responsive design", "Project showcase", "Skills display"],
+      "learned": "I learned how to create a responsive website using HTML, CSS, and JavaScript, along with managing content through JSON.",
+      "challenges": "One of the main challenges was ensuring the website was fully responsive across different devices and screen sizes."
     }
   },
   {
@@ -53,7 +46,7 @@
     "category": "personal",
     "year": "2026",
     "status": "Finishing",
-    "featured": true,
+    "featured": false,
     "image": "assets/images/projects/GeeAI.png",
     "tech": ["HTML", "CSS", "JavaScript", "API integration"],
     "github": "https://github.com/isitGee/GeeAI",
@@ -84,6 +77,33 @@
       "features": ["Task management", "Priority setting", "Progress tracking"],
       "learned": "I learned how to build a full-stack web application using React for the frontend and Node.js for the backend, for data storage.",
       "challenges": "One of the main challenges was ensuring a smooth user experience while maintaining efficient data handling and synchronization."
+    }
+  },
+  {
+    "id": "Project 05",
+    "title": "GeeWifi WiFi Billing system",
+    "description": "web-based Wi-Fi management and subscription system that allows users to connect to a network, view available internet packages, make payments, and manage their subscriptions through a simple interface",
+    "category": "Networking",
+    "year": "2026",
+    "status": "In progress",
+    "featured": false,
+    "image": "assets/images/projects/GeeWifi.png",
+    "tech": ["React", "Networking" , "Jsx"],
+    "github": "https://github.com/isitGee/GeeWifi",
+    "details": {
+"problem": "Managing Wi-Fi users, internet packages, payments, and subscriptions manually can be inefficient and difficult to manage as the number of users grows.",
+
+"solution": "GeeWiFi provides a centralized web-based system for user authentication, internet package selection, payments, and subscription management.",
+
+"features": [
+  "User authentication and Wi-Fi access management",
+  "Internet package selection and subscription management",
+  "Payment integration and transaction handling"
+],
+
+"learned": "I learned how to structure a web-based service using separate frontend and backend services, manage user and subscription data, and design a simple user-friendly interface for a real-world networking system.",
+
+"challenges": "One of the main challenges was connecting the frontend with different services while keeping authentication, packages, payments, and subscriptions synchronized. I solved this by separating the system into service layers and using a clear data flow between each component."
     }
   }
 ]
