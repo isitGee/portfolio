@@ -65,5 +65,25 @@
       "learned": "I learned how to integrate external APIs into web applications and manage the flow of data between the frontend and backend services.",
       "challenges": "One of the main challenges was obtaining free AI API access and managing the associated costs."
     }
+  },
+    {
+    "id": "Project 04",
+    "title": "DayFlow",
+    "description": "DayFlow is a web-based task management application that helps users organize their daily tasks, set priorities, and track progress. It features a clean interface, task categorization, and reminders to enhance productivity.",
+    "category": "webApplication",
+    "year": "2026",
+    "status": "In development",
+    "featured": false,
+    "image": "assets/images/projects/DayFlow.png",
+    "tech": ["typescript","Tailwind CSS","vite" , "React"],
+    "github": "https://github.com/isitGee/DayFlow",
+    "demo": "https://dayflow-isitgee.vercel.app/",
+    "details": {
+      "problem": "DayFlow aims to provide users with a simple and effective way to manage their daily tasks, set priorities, and track their progress.",
+      "solution": "DayFlow offers a user-friendly interface with task categorization and reminder features to enhance productivity.",
+      "features": ["Task management", "Priority setting", "Progress tracking"],
+      "learned": "I learned how to build a full-stack web application using React for the frontend and Node.js for the backend, for data storage.",
+      "challenges": "One of the main challenges was ensuring a smooth user experience while maintaining efficient data handling and synchronization."
+    }
   }
 ]
