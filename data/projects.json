@@ -5,7 +5,7 @@
     "description": "A gaming hub that allows users to explore, play, and share their favorite games. It features a user-friendly interface, game recommendations, and social sharing capabilities.",
     "category": "Web",
     "year": "2026",
-    "status": "In Progress",
+    "status": "Completed (maintaince)",
     "featured": true,
     "image": "assets/images/projects/GeePlays.png",
     "tech": ["HTML", "CSS", "JavaScript", "API integration"],
