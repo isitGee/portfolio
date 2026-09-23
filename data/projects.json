@@ -91,19 +91,14 @@
     "tech": ["React", "Networking" , "Jsx"],
     "github": "https://github.com/isitGee/GeeWifi",
     "details": {
-"problem": "Managing Wi-Fi users, internet packages, payments, and subscriptions manually can be inefficient and difficult to manage as the number of users grows.",
-
-"solution": "GeeWiFi provides a centralized web-based system for user authentication, internet package selection, payments, and subscription management.",
-
-"features": [
-  "User authentication and Wi-Fi access management",
-  "Internet package selection and subscription management",
-  "Payment integration and transaction handling"
-],
-
-"learned": "I learned how to structure a web-based service using separate frontend and backend services, manage user and subscription data, and design a simple user-friendly interface for a real-world networking system.",
-
-"challenges": "One of the main challenges was connecting the frontend with different services while keeping authentication, packages, payments, and subscriptions synchronized. I solved this by separating the system into service layers and using a clear data flow between each component."
+    "problem": "Managing Wi-Fi users, internet packages, payments, and subscriptions manually can be inefficient and difficult to manage as the number of users grows.",
+    "solution": "GeeWiFi provides a centralized web-based system for user authentication, internet package selection, payments, and subscription management.",
+    "features": [
+    "User authentication and Wi-Fi access management",
+    "Internet package selection and subscription management",
+    "Payment integration and transaction handling"],
+    "learned": "I learned how to structure a web-based service using separate frontend and backend services, manage user and subscription data, and design a simple user-friendly interface for a real-world networking system.",
+    "challenges": "One of the main challenges was connecting the frontend with different services while keeping authentication, packages, payments, and subscriptions synchronized. I solved this by separating the system into service layers and using a clear data flow between each component."
     }
   }
 ]
