@@ -242,5 +242,45 @@
     "learned": "I learned how to design and build a complete product around a real user problem rather than just creating a form-based website. The project strengthened my React component architecture, routing, state management, localStorage persistence, responsive CSS, print styling, browser-based PDF generation, accessibility, SEO, and recommendation logic. I also learned how design decisions such as conditional sections, template selection, and guided questions can reduce complexity for users.",
     "challenges": "The main challenge was making the CV builder flexible enough to support very different users and career goals without overwhelming them. I solved this by creating separate guided and quick paths, a structured data model, recommendation logic, conditional form sections, and multiple templates that can use the same underlying CV data. Another challenge was producing a professional A4 PDF entirely on the client side while keeping text selectable, maintaining correct page breaks, margins, and layout consistency between the live preview and printed document."
   }
+},
+  {
+  "id": "Project 10",
+  "title": "gitDNA Repository Visualizer",
+  "description": "A developer tool that helps users understand unfamiliar GitHub repositories by transforming their real repository structure into interactive visual maps, project insights, and guided exploration paths. Users can paste a public GitHub repository URL and explore its technology stack, architecture, important files, project health, dependencies, and recommended path through the codebase.",
+  "category": "Developer Tools",
+  "year": "2026",
+  "status": "In Progress",
+  "featured": true,
+  "image": "assets/images/projects/gitDNA.png",
+  "tech": ["React", "TypeScript", "Vite", "GitHub REST API", "JSDOM", "Simple Icons"],
+  "github": "https://github.com/isitGee/gitdna",
+  "demo": "https://isitgee.github.io/gitdna/",
+  "details": {
+    "problem": "Understanding an unfamiliar GitHub repository can be difficult, especially when the project has many folders, technologies, services, configuration files, and tests. Developers often have to manually explore the repository before understanding where the important parts are and how the project is organized.",
+    "solution": "gitDNA analyzes a public GitHub repository and turns its actual metadata, file tree, language statistics, manifests, and structure into an interactive understanding of the project. It provides three complementary views: DNA for project insights, Map for architecture visualization, and Guide for a recommended exploration path through important parts of the codebase.",
+    "features": [
+      "Repository analysis from a public GitHub URL",
+      "DNA view showing project identity, technology stack, languages, structure, characteristics, important files, and repository health",
+      "Interactive architecture Map with connected repository nodes",
+      "Automatic identification of entry points, core folders, interfaces, services, data, tests, configuration, automation, and external dependencies",
+      "Zoom, pan, fit-to-screen, reset, group filtering, search, and minimap controls",
+      "Node detail panels with plain-English explanations",
+      "Guide view with automatically generated exploration paths",
+      "Recommended first files, configuration files, and tests",
+      "Repository-wide search with Ctrl+K",
+      "Search results that highlight corresponding items on the architecture map",
+      "Shareable repository analysis links and live session links",
+      "README badge generation",
+      "Automatic technology detection using package manifests and repository data",
+      "Official technology logos generated from Simple Icons",
+      "Light and dark Windows 11-inspired interface",
+      "System theme detection with persistent manual theme selection",
+      "Large repository sampling with transparent reporting when the full tree cannot be analyzed",
+      "Friendly handling of GitHub API rate limits",
+      "Automated render and DOM interaction tests"
+    ],
+    "learned": "I learned how to build a developer-focused analysis tool around real GitHub data, work with the GitHub REST API, analyze repository structures programmatically, transform hierarchical file data into an architecture graph, generate guided exploration paths, and create interactive visualizations from structured data. The project also strengthened my understanding of TypeScript architecture, React state management, client-side routing, automated testing, API limitations, and designing tools that help developers understand other software.",
+    "challenges": "The biggest challenge was extracting useful architectural information from a repository without pretending to understand code that had not actually been analyzed. I designed the analysis around real metadata, file trees, language statistics, and selected package manifests, then computed the architecture, repository characteristics, health observations, and exploration guide locally. Handling GitHub API rate limits and very large repositories was another challenge, requiring request-efficient analysis and breadth-first sampling while clearly telling users when the available repository data was truncated."
+  }
 }
 ]
