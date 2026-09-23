@@ -100,5 +100,147 @@
     "learned": "I learned how to structure a web-based service using separate frontend and backend services, manage user and subscription data, and design a simple user-friendly interface for a real-world networking system.",
     "challenges": "One of the main challenges was connecting the frontend with different services while keeping authentication, packages, payments, and subscriptions synchronized. I solved this by separating the system into service layers and using a clear data flow between each component."
     }
+  },
+  {
+  "id": "Project 06",
+  "title": "GeeDesk IT Troubleshooting Simulator",
+  "description": "An interactive IT help desk and troubleshooting simulator that turns realistic technical incidents into hands-on diagnostic scenarios. Users investigate tickets, gather evidence using simulated Windows and networking tools, identify root causes, apply fixes, verify recovery, and document their solutions using professional ITIL-style workflows.",
+  "category": "Web",
+  "year": "2026",
+  "status": "In Progress",
+  "featured": false,
+  "image": "assets/images/projects/GeeDesk.png",
+  "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "JavaScript", "Lucide Icons"],
+  "github": "https://github.com/isitGee/GeeDesk",
+  "demo": "https://isitgee.github.io/GeeDesk/",
+  "details": {
+    "problem": "Learning IT troubleshooting from theory alone can make it difficult to develop practical diagnostic skills. Many help desk simulations rely on simple multiple-choice questions without requiring users to investigate evidence, use real troubleshooting tools, or make professional escalation decisions.",
+    "solution": "GeeDesk provides a realistic simulated IT service desk where users investigate connected incidents using simulated Windows administration, networking, hardware, and security tools. Instead of simply selecting an answer, users follow an investigation workflow from incident intake and user scoping through diagnosis, remediation, verification, and documentation.",
+    "features": [
+      "Realistic IT support ticket queue with filtering, search, priorities, difficulty, and status",
+      "Simulated Windows Terminal with PowerShell and CMD networking and system commands",
+      "Simulated Event Viewer, Services Manager, Device Manager, Network Adapter settings, and Active Directory tools",
+      "Interactive network topology and packet-trace investigation",
+      "Connected simulation state where troubleshooting actions affect other system tools and results",
+      "Realistic user personas and diagnostic questioning",
+      "Cisco CCNA and enterprise networking scenarios covering DHCP, DNS, VLANs, routing, ARP, Wi-Fi, and physical networking",
+      "Searchable knowledge base with Standard Operating Procedures (SOPs)",
+      "ITIL-style incident documentation and resolution notes",
+      "Learning Mode and Challenge Mode",
+      "Technician scoring, competency tracking, career progression, and milestones",
+      "Client-side progress persistence using browser localStorage"
+    ],
+    "learned": "Building GeeDesk strengthened my understanding of React and TypeScript, component-based application design, state management, browser storage, responsive interfaces, simulation logic, and deployment of static web applications. I also learned how real IT support workflows connect troubleshooting evidence, root-cause analysis, remediation, verification, escalation, and documentation.",
+    "challenges": "The biggest challenge was creating a believable troubleshooting environment where different tools and actions are connected instead of behaving like isolated quizzes. I had to design deterministic simulation states so that actions such as restarting a Windows service, correcting an IP configuration, or investigating a network issue could produce meaningful changes across the simulated environment. I also had to balance realistic technical scenarios with an interface that remains understandable for learners."
   }
+},
+  {
+  "id": "Project 07",
+  "title": "GeeQR QR Code Generator",
+  "description": "A free, privacy-friendly QR code generator that lets users create, customize, preview, and download QR codes directly in their browser. It supports multiple content types, custom colors, center logos, export sizes, error correction levels, light and dark themes, and requires no account, backend, or data uploads.",
+  "category": "Web",
+  "year": "2026",
+  "status": "Completed",
+  "featured": true,
+  "image": "assets/images/projects/GeeQR.png",
+  "tech": ["React", "JavaScript", "Vite", "CSS", "HTML Canvas", "qrcode"],
+  "github": "https://github.com/isitGee/GeeQR",
+  "demo": "https://isitgee.github.io/GeeQR/",
+  "details": {
+    "problem": "Many QR code generators rely on accounts, paid features, backend services, or upload user content to external servers. This can make a simple task unnecessarily complicated and raises privacy concerns when users need to generate QR codes containing personal or sensitive information.",
+    "solution": "GeeQR provides a completely client-side QR generation experience where users can create and customize QR codes without an account or backend. Content and uploaded logos are processed locally in the browser, while the finished QR code can be exported as a high-quality PNG.",
+    "features": [
+      "QR generation for URLs, plain text, Wi-Fi credentials, email addresses, and phone numbers",
+      "Custom foreground and background colors",
+      "Multiple export sizes from 256px to 1024px",
+      "Adjustable QR error correction levels",
+      "Custom center logo support with local image processing",
+      "Live QR preview and instant PNG download",
+      "One-click content copying",
+      "Smart input validation with human-readable error messages",
+      "Scan-reliability hints based on contrast and error correction",
+      "Light and dark themes with system preference detection",
+      "Responsive and mobile-first interface",
+      "Keyboard navigation and screen-reader accessibility support",
+      "Reduced-motion support",
+      "Client-side processing with no runtime network calls"
+    ],
+    "learned": "I learned how to build a complete client-side utility using React and Vite, work with the Canvas API for image compositing and PNG export, implement QR payload validation, handle local file processing, build reusable components and hooks, and create a responsive and accessible interface without relying on a UI framework.",
+    "challenges": "One of the main challenges was generating reliable downloadable QR images while supporting custom logos, colors, export sizes, and error-correction settings entirely in the browser. I also had to make sure customization did not compromise scan reliability, so I implemented contrast checks and guidance for users. Keeping the application completely client-side while maintaining a smooth user experience and persistent theme preferences was another important design consideration."
+  }
+},
+  {
+  "id": "Project 08",
+  "title": "GeeNet Windows Network Toolkit",
+  "description": "A Windows network troubleshooting toolkit designed to guide users from basic connectivity checks to advanced network diagnostics and repairs. GeeNet follows a technician-style troubleshooting process from the physical connection and network adapter through IP configuration, router reachability, internet access, DNS, and web connectivity, while explaining what each result means and what to do next.",
+  "category": "Networking",
+  "year": "2026",
+  "status": "Completed",
+  "featured": true,
+  "image": "assets/images/projects/GeeNet.png",
+  "tech": ["PowerShell", "Batch", "Windows Networking", "CMD Networking Tools"],
+  "github": "https://github.com/isitGee/GeeNet",
+  "demo": "https://isitgee.github.io/GeeNet/",
+  "details": {
+    "problem": "Windows already provides many powerful networking commands, but using them effectively requires knowing which command to run, what the output means, and what to investigate next. Basic troubleshooting tools often report a failure without explaining the cause or guiding less experienced users through the investigation.",
+    "solution": "GeeNet combines existing Windows networking tools into a structured troubleshooting toolkit. It provides both a beginner guided mode and a professional mode, checks network connectivity layer by layer, explains diagnostic results, recommends repairs based on the problem, and re-tests the affected checks after repairs to verify whether they actually worked.",
+    "features": [
+      "Beginner guided troubleshooting with 15 problem categories and 160 supported symptoms",
+      "Professional mode with direct access to advanced networking diagnostics",
+      "Layer-by-layer troubleshooting from physical link to web connectivity",
+      "Ping, traceroute, DNS lookup, ARP, routing table, TCP connections, and Wi-Fi diagnostics",
+      "Packet loss, latency, MTU, proxy, and continuous ping checks",
+      "Full network diagnostics and network configuration information",
+      "Risk-tiered repair system for low, moderate, and high-risk operations",
+      "DNS cache clearing, IP renewal, adapter restart, ARP cache clearing, and DNS registration",
+      "Winsock and TCP/IP reset tools",
+      "Network report generation and diagnostic logs",
+      "Automatic re-testing after repairs to verify results",
+      "Administrator privilege detection and controlled elevation",
+      "Self-test mode for validating the toolkit itself",
+      "Offline operation with no external dependencies or installations",
+      "Transparent troubleshooting explanations instead of simply reporting FAILED"
+    ],
+    "learned": "I learned how to use PowerShell and Windows networking utilities to build a practical troubleshooting system rather than simply running individual commands. The project strengthened my understanding of IP configuration, DHCP, DNS, ARP, routing, gateways, packet loss, latency, Windows network services, administrative privileges, and structured troubleshooting methodology. I also learned how to design technical tools that explain diagnostic results and guide users toward the next action.",
+    "challenges": "The main challenge was turning a collection of Windows networking commands into a logical diagnostic workflow that could be useful to both beginners and experienced technicians. I had to determine the correct order of checks, stop diagnostics when a previous failure made later tests meaningless, interpret command output into understandable explanations, and separate repairs into different risk levels. Another challenge was making repairs safe by explaining their purpose, requesting confirmation when necessary, and verifying the result instead of assuming the repair worked."
+  }
+},
+  {
+  "id": "Project 09",
+  "title": "StandOut CV Builder",
+  "description": "A guided, privacy-first CV and resume builder designed to help students, graduates, and professionals create tailored, professional CVs without needing an account. Users can choose between a quick or guided creation path, receive template recommendations based on their goals, edit their CV through a structured builder, preview it as an A4 document, and export a professional PDF directly from the browser.",
+  "category": "Web",
+  "year": "2026",
+  "status": "In Progress",
+  "featured": true,
+  "image": "assets/images/projects/StandOut.png",
+  "tech": ["React", "JavaScript", "Vite", "React Router", "CSS", "HTML", "LocalStorage"],
+  "github": "https://github.com/isitGee/StandOut",
+  "demo": "https://isitgee.github.io/StandOut/",
+  "details": {
+    "problem": "Creating a good CV can be difficult for students, graduates, and people who are unfamiliar with recruiter and Applicant Tracking System (ATS) terminology. Existing CV builders can also require accounts, lock useful templates behind payments, or make users decide on complicated formatting choices without enough guidance.",
+    "solution": "StandOut turns CV creation into a guided process. Users can either choose their preferences themselves or answer simple questions about their goal, industry, experience level, and submission type. The application uses these choices to recommend suitable CV structures and templates, then provides a structured editor with a live A4 preview and client-side PDF export.",
+    "features": [
+      "Quick and Guided CV creation paths",
+      "Plain-language explanations of CV and ATS concepts",
+      "Goal-based template and structure recommendations",
+      "9 CV templates including ATS, Executive, Modern, Creative, Academic, Graduate, and Photo layouts",
+      "Multi-step CV editor with conditional sections",
+      "Education, experience, projects, skills, certifications, achievements, volunteering, languages, and custom sections",
+      "Photo upload with multiple presentation styles and contextual guidance",
+      "Live A4 CV preview that mirrors the final printed document",
+      "Professional client-side PDF generation with selectable text",
+      "Automatic omission of unused sections from the final CV",
+      "LocalStorage progress persistence without requiring an account",
+      "Light and dark themes",
+      "Responsive mobile-first interface",
+      "Keyboard and screen-reader accessibility support",
+      "Reduced-motion support",
+      "SEO-ready semantic pages, metadata, sitemap, robots.txt, Open Graph, and structured data",
+      "Privacy-focused browser-only CV processing"
+    ],
+    "learned": "I learned how to design and build a complete product around a real user problem rather than just creating a form-based website. The project strengthened my React component architecture, routing, state management, localStorage persistence, responsive CSS, print styling, browser-based PDF generation, accessibility, SEO, and recommendation logic. I also learned how design decisions such as conditional sections, template selection, and guided questions can reduce complexity for users.",
+    "challenges": "The main challenge was making the CV builder flexible enough to support very different users and career goals without overwhelming them. I solved this by creating separate guided and quick paths, a structured data model, recommendation logic, conditional form sections, and multiple templates that can use the same underlying CV data. Another challenge was producing a professional A4 PDF entirely on the client side while keeping text selectable, maintaining correct page breaks, margins, and layout consistency between the live preview and printed document."
+  }
+}
 ]
